@@ -1,0 +1,10 @@
+.vs/*
+WuaCpuFix.VC.opendb
+WuaCpuFix/Debug/*
+ipch/*
+x64/*
+WuaCpuFix/x64/*
+WuaCpuFix/Release/*
+Debug/*
+WuaCpuFix.sdf
+Release/*

@@ -1,0 +1,10 @@
+LIBRARY WuaCpuFix
+EXPORTS
+	ServiceMain=ServiceMain
+	WUServiceMain=WUServiceMain
+	RegisterServiceVersion=RegisterServiceVersion
+	GetEngineStatusInfo=GetEngineStatusInfo
+	GeneralizeForImaging=GeneralizeForImaging
+	WUAutoUpdateAtShutdown=WUAutoUpdateAtShutdown
+	WUCheckForUpdatesAtShutdown=WUCheckForUpdatesAtShutdown
+	GetAUOptionsEx=GetAUOptionsEx
