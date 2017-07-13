@@ -1,4 +1,4 @@
-## Windows Update Agent CPU Support Limitation Removal
+## Windows Update Agent CPU Support Limitation Removal (WuaCpuFix)
 
 ## Description
 This tool (which is really a simple DLL library) is given "AS IS" without any warranty **for testing/academical purpose only**. It is designed to allow updates to be installed using Windows Update on Windows 7 and Windows 8.1 systems running Intel Kaby Lake and AMD Ryzen processors or the later ones.
@@ -16,8 +16,8 @@ Because any patches starting from April 2017 for Windows 7 and Windows 8.1 are l
 
 64 bit Windows 7 or Windows 8.1 systems. 32 bit operating systems are currently not supported.
 
-## Installation
-To install just download the "Deployment" folder and run "install.bat" with administrator rights (right click on the file and choose "Run As Administrator"). Follow the on screen instructions.
+## Installation or Update
+To install or update just download the "Deployment" folder and run "install.bat" with administrator rights (right click on the file and choose "Run As Administrator"). Follow the on screen instructions.
 
 ## Deinstallation
 
@@ -30,6 +30,13 @@ To deinstall just run "uninstall.bat" with administrator rights (right click on 
 	HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\wuauserv\Parameters
 3. Double click the "ServiceDLL" registry value and set its value to "%systemroot%\system32\wuacpufix64.dll" path.
 4. Reboot computer.
+
+## Manual update
+
+1. Stop Windows Update service.
+2. Download or build WuaCpuFix64.dll file and place it in %systemroot%\system32\ folder.
+3. Start Windows Update service.
+4. If you still see a "hardware not supported" error message in Windows Update then reboot computer.
 
 ## License
 
@@ -49,17 +56,6 @@ Any feedback is welcome. Feel free to issue a bug reports or feature/improvement
 To build the project you have to install either Visual Studio 2013 Community or Visual Studio 2015 Community editions together with MFC C++ Libraries. 
 
 Then just open the WuaCpuFix.sln file and build the solution. When building in Release mode the compiled dll will automatically be copied into the Deployment folder ready for installation.
-
-## Not fully tested
-I do have an AMD Ryzen 7 1700 processor at home, however I was not able to fully test this tool on my own. For some unknown reason neither Windows 7 nor Windows 8.1 were blocking updates to be installed using Windows Update on my PC. I have launched the low level debugging session to see what the original IsCpuSupported function is returning on my PC and it was always returning 1 (TRUE) but according to the official Microsoft statement it should not.
-
-As a result I was able only to check if my tool is able to override the IsCpuSupported function to always return 1 (TRUE) which should be totally enough to say that it is working. 
-
-If for any of you my tool is not working on 64 bit version of Windows 7 or 8.1 please let me know by creating an issue on github adding the following information:
-* Version of Operating System
-* Full version of wuaueng.dll file from Windows\System32 folder and its hash if possible.
-
-Please note that on 32 bit Windows versions my tool will currently not work at all.
 
 ## First time on GitHub
 

@@ -18,6 +18,12 @@ IF NOT %HasAdminRights%==1 (
 	GOTO END
 )
 
+echo [*] Looking for Windows Update PID...
+tasklist /SVC /FI "SERVICES eq wuauserv" | find "PID" /V
+echo.
+if !errorlevel!==0 (
+	net stop wuauserv /yes
+)
 
 set PROCESSOR_ARCHITECTURE | find "x86" > nul
 if !errorlevel!==0 (
@@ -69,6 +75,8 @@ if not !errorlevel!==0 (
 )
 
 :DONE
+echo [*] Starting Windows Update...
+net start wuauserv
 echo [+] Installation complete!
 echo Now reboot your computer.
 goto END
