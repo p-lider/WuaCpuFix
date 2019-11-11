@@ -56,7 +56,3 @@ Any feedback is welcome. Feel free to issue a bug reports or feature/improvement
 To build the project you have to install either Visual Studio 2013 Community or Visual Studio 2015 Community editions together with MFC C++ Libraries. 
 
 Then just open the WuaCpuFix.sln file and build the solution. When building in Release mode the compiled dll will automatically be copied into the Deployment folder ready for installation.
-
-## First time on GitHub
-
-Please note that this is my first project on github - I have never been here as an author/contributor, so I am not familiar with GitHub from that side yet. As a result my response time may be slow because I have to learn how this portal works, for example - how commits can be related to issues, etc.
